@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Filter tasks.
+{% endblock %}
+
+{% block main %}
+    <h2>Filter tasks by days remaining till due date</h2>
+    <form action="/filter" method="post">
+        <div class="form-group">
+        <input autocomplete="off" class="form-control" name="days" placeholder="Number of days remaining till due: (from today)" type="number">
+        <h3><b>Show only uncompleted tasks     </b><input type="checkbox" name="check" value="due"></h3>
+        <h3><b>Show only completed tasks     </b><input type="checkbox" name="done" value="done"></h3>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}

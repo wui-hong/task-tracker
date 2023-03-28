@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get a quote
+{% endblock %}
+
+{% block main %}
+    <form action="/new" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="title" placeholder="Title" type="text">
+            <br><br>
+            <textarea autocomplete="off" class="form-big" name="details" placeholder="Details" rows="4" cols="50"></textarea>
+            <br><br>
+            <input autocomplete="off" autofocus class="form-control" name="tags" placeholder="Tag" type="text">
+            <br><br>
+            <b class="due">Due Date of Task:</b>
+            <br><br>
+            <input autocomplete="off" class="form-control" name="date" placeholder="Date due:" type="date">
+        </div>
+        <button class="submit" type="submit">Submit Task</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Task History
+{% endblock %}
+
+{% block main %}
+    <form action="/delete" method="post">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Details</th>
+                <th>Tag</th>
+                <th>Due Date</th>
+                <th>Completed on</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in info %}
+                <tr>
+                    <td>{{ row.title }} </td>
+                    <td>{{ row.detail }} </td>
+                    <td>{{ row.tags }} </td>
+                    <td>{{ row.due }} </td>
+                    <td>{{ row.datetime }} </td>
+                    <td><input type="checkbox" name="delete" value={{ row.taskid }}></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <input class="submit" type="submit" value="Delete Tasks">
+    </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search for tasks
+{% endblock %}
+
+{% block main %}
+    <h2>Search your tasks!</h2>
+    <form action="/search" method="post">
+        <div class="form-group">
+        <input autocomplete="off" class="form-control" name="title" placeholder="Contains in Title:" type="text">
+        <input autocomplete="off" class="form-control" name="detail" placeholder="Contains in Details:" type="text">
+        <input autocomplete="off" class="form-control" name="tag" placeholder="Tag:" type="text">
+        <h4><b>Task due date <i>From</i></b></h4>
+            <input autocomplete="off" autofocus class="form-control" name="start" placeholder="Start Date" type="date">
+        <h4><b>Up Till:</b></h4>
+            <input autocomplete="off" class="form-control" name="end" placeholder="End Date" type="date">
+        <h5><b>Note: If searching for only a specific date, please input it in the "From" field! :)</b></h5>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}

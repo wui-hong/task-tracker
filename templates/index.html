@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your tasks
+{% endblock %}
+
+{% block main %}
+    <form action="/update" method="post">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Details</th>
+                <th>Tags</th>
+                <th>Due Date</th>
+                <th>Completed</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in info %}
+                <tr>
+                    <td>{{ row.title }} </td>
+                    <td>{{ row.detail }} </td>
+                    <td>{{ row.tags }} </td>
+                    <td>{{ row.due }} </td>
+                    <td><input type="checkbox" name="check" value={{ row.taskid }}></td>
+                    <td><input type="checkbox" name="delete" value={{ row.taskid }}></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <input class="submit" type="submit" value="Update Tasks">
+    <input class="submit" formaction="/delete" type="submit" value="Delete Tasks">
+    </form>
+{% endblock %}
